@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keyboard keyup and keydown events</title>
+  <style>
+    #div1 {
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+      position: absolute;
+      padding: 20px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 15px;
+      line-height: 160px;
+    }
+  </style>
+</head>
+<body>
+  <div id="div1">Press S - Smile 😍C - Cry 😂</div>
+
+  <script>
+    const divElement = document.getElementById('div1');
+
+    document.addEventListener('keydown', function(event) {
+      let reaction = "";
+
+      switch (event.key) {
+        case 's':
+          reaction = "😍";
+          break;
+        case 'c':
+          reaction = "😭";
+          break;
+        default:
+          reaction = "😎 Press 's' or 'c'";
+      }
+
+      divElement.textContent = reaction;
+    });fg
+  </script>
+</body>
+</html>
