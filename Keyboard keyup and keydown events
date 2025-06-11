@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keyboard keyup and keydown events</title>
+</head>
+<body style="background-color:lightblue;">
+  <h2>Type something and press Ctrl + S</h2>
+  <input type="text" id="textField" placeholder="Enter a key">
+  
+  <script>
+    document.addEventListener('keydown', function(event) {
+      if (event.ctrlKey && event.key === 's') {
+        event.preventDefault(); // stops browser's default Save behavior
+        alert("You pressed Ctrl + S");
+      }
+    });
+  </script>
+</body>
+</html>
