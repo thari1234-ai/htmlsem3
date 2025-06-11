@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Changing HTML Content and Style</title>
+    <style>
+      #divid {
+        width: 150px;
+        height: 150px;
+        border: 2px solid green;
+        position: relative;
+        background-color: lightyellow;
+        animation: bounce 2s infinite;
+
+        
+      }
+
+      @keyframes divAnimate {
+        from { left: 0px; }
+        to { left: 200px; }
+      }
+
+      @keyframes divNewAnimate {
+        from { top: 0px; }
+        to { top: 100px; }
+      }
+
+      @keyframes spinMe {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes bounce{
+        0%,100%{
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-30px);
+        }
+      }
+    </style>
+  </head>
+
+  <body style="background-color: lightblue;">
+    <p id="p1">changing html style</p>
+
+    <div id="divid">
+  <div class="inner-box" style="background-color: yellow; color:black;">division1</div>
+</div>
+
+<!-- Old inner boxes commented out correctly -->
+<!--
+<div class="inner-box" style="background-color: rgb(9, 255, 0); color:black;">division2</div>
+<div class="inner-box" style="background-color: rgb(154, 36, 233);">division3</div>
+<div class="inner-box" style="background-color: rgb(255, 0, 0);">division4</div>
+-->
+
+<button type="button" onclick="align()">Click me to change animation</button>
+
+
+    <script>
+      
+        // Change animation to vertical move + spin combo
+       // document.getElementById("divid").style.animation = "divNewAnimate 2s infinite, spinMe 4s linear infinite,bounce 2s ";
+       // document.getElementById("divid").style.animationIterationCount = 3;
+        //document.getElementById("divid").style.animationDirection = "alternate";
+      // document.getElementById("divid").style.animation = "divNewAnimate 2s infinite, spinMe 4s linear infinite,bounce 2s infinite";
+        //document.getElementById("divid").style.animationFillMode = "forwards";
+       // document.body.style.backgroundColor = "lightgreen";
+
+      function align() {
+        const myDiv = document.getElementById("divid");
+
+        // Apply new animation combo (Bounce + Spin)
+        myDiv.style.animation = "bounce 1s infinite";
+
+        // Change background
+        document.body.style.backgroundColor = "lightgreen";
+      }
+    </script>
+  </body>
+</html>

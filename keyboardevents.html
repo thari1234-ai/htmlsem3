@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Keyboard  keyup and keydown events</title>
+</head>
+<body>
+<input type="text"id="textField" placeholder="eneter a key">
+</body>
+<script>
+const input=document.getElementById('textField')
+input.addEventListener('keydown',function(event)
+{console.log('keydown',event.key);}
+);
+
+input.addEventListener('keyup',function(event)
+{console.log('keyup',event.key);}
+);
+</script>
+</html>

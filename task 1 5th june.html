@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <title>Tharini Bank</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+	</head>
+	<body>
+	<h1>Tharini Bank Welcomes you!!</h1>
+    
+	<p id="p">Thanks for choosing my bank.</p>
+	
+	<p id="p1"></p>
+            <div id="myCarousel" class="carousel slide mb-4" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://t4.ftcdn.net/jpg/00/61/06/27/360_F_61062796_NF87GPnWV0fQ2LhoYNlyjev0PocRwZj9.jpg" class="d-block" alt="Bank 1">
+    </div>
+    <div class="carousel-item">
+      <img src="https://media.istockphoto.com/id/2004891062/photo/happy-mid-aged-business-woman-manager-handshaking-greeting-client-in-office.jpg?s=612x612&w=0&k=20&c=kP6DSKhIVMO-m27l4nCmvpwzaKvzV8ncPT9elotc4QI="  class="d-block" alt="Bank 2">
+    </div>
+    <div class="carousel-item">
+      <img src="https://c8.alamy.com/comp/2G7DNJN/funny-office-worker-pointing-at-piggy-bank-and-smiling-proud-of-saving-up-some-money-2G7DNJN.jpg" class="d-block"  alt="Bank 3">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <a class="navbar-brand" href="#"><i class="bi bi-bank"></i> Tharini Bank</a>
+        </nav>
+
+	<p>Lets get started</p>
+	<style>
+#myCarousel .carousel-item img {
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+}
+	body
+	{
+	background-color:pink;
+	
+	}
+	h1
+	{
+	text-align:center;
+	}
+	#p{
+	text-align:center;
+	font-style:italic;
+	font-weight:bolder;
+	}
+	input{
+            width: 300px;
+            padding: 10px;
+            border: 2px solid #ff69b4;
+            border-radius: 10px;
+            outline: none;
+            margin-bottom: 10px;
+            font-size: 1em;
+            background-color: #fff0f5;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+		
+
+	label {   
+    font-weight: bold;       
+    color: #6a0dad;          
+    margin-bottom: 5px;      
+    font-family: 'Arial';
+    font-size: 1.1em;
+}
+		.btn-btn-primary {
+            background-color: #ff69b4; /* Hot pink */
+            color: white;
+            font-size: 1.3em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease-in-out;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+		.btn-btn-primary:hover{
+			transform: scale(1.05); /* zoom a bit */
+            box-shadow: 0 0 15px #ff1493;
+		}
+	</style>
+    
+	<label for="name">Enter your name:</label>
+	<input type="text" id="name" placeholder="Enter your name: "></input><br><br>
+	<label for="accountnum">Enter your acc number :</label>
+	<input type="number" id="accountnum" placeholder="Enter your acc number pls:"></input><br><br>
+	<label for="password">Enter your Password(only 8):</label>
+	<input type="password" id="password" placeholder="Enter your password pls: "></input><br><br>
+	<button  class="btn-btn-primary" onclick="checkpass()">Submit to view your account</button>
+    
+	</body>
+	<script>
+let attempts = 0;
+const maxAttempts = 3;
+
+function checkpass() {
+    const correctAccountNum = "180407";
+    const correctPassword = "tha123456";
+
+    let enteredAcc = document.getElementById("accountnum").value;
+    let enteredPass = document.getElementById("password").value;
+    let name = document.getElementById("name").value;
+
+    while (attempts < maxAttempts) {
+        if (enteredAcc === correctAccountNum && enteredPass === correctPassword) {
+            document.getElementById("p").innerHTML = `✅ Hello ${name}, access granted. Welcome to Tharini Bank! 💰`;
+            attempts = 0; // reset on success
+            return;
+        } else {
+            attempts++;
+            if (attempts >= maxAttempts) {
+                document.getElementById("p").innerHTML = "❌ Too many failed attempts. Account locked!";
+                return;
+            } else {
+                document.getElementById("p").innerHTML = `❌ Wrong account number or password. Attempts left: ${maxAttempts - attempts}`;
+                return;
+            }
+        }
+    }
+}
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> DOM Event date button </title>
+</head>
+
+<body style="background-color:yellow;">
+<h1 style="text-align:center">Button event (Date)</h1>
+<p style="text-align:center">mouse click or mouse over loading an image loading a webpage changing input field submitting a form or pressing a key on a keyboard</p>
+
+<button type="button"id="b1">check todays date</button>
+</body>
+<script>
+document.getElementById("b1").onclick = displayDate;
+function displayDate()
+{
+document.getElementById("p1").innerHTML=Date();
+}
+</script>
+<p id="p1"></p>
+</html>

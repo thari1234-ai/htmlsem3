@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tharini Tech Online Shopping Store</title>
+    <style>
+        body {
+            background-color: chartreuse;
+        }
+        h4 {
+            color: rgb(0, 0, 0);
+            font-size: 15px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            color: rgb(0, 0, 0);
+        }
+        .container {
+            max-width: 400px;
+            margin: 30px auto;
+            background: #fff8;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        img{
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Tharini Tech Online Shopping Store</h1>
+    <h4>
+        Tharini Shopping Tech: Your Go-To Hub for Smart Savings. Looking for unbeatable deals and exciting offers? Tharini Shopping Tech brings you the latest discounts on top brands, ensuring you get the best value for your purchases. Whether it’s electronics, fashion, or home essentials, our exclusive deals and seasonal sales make shopping more rewarding. Stay ahead with tech-driven savings and shop smarter today!
+    </h4>
+    <div class="container">
+        <label for="customername">Your Name:</label>
+        <input type="text" id="customername" placeholder="Enter your name"><br><br>
+        <label for="carttot">Cart Total (in Rs):</label>
+        <input type="number" id="carttot" placeholder="Enter cart total"><br><br>
+        <button onclick="calculateDiscount()">Calculate Discount</button>
+    </div>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+    <img src="https://assets.entrepreneur.com/content/3x2/2000/20150812074510-Online-shopping.jpeg?format=pjeg&auto=webp" height="500" width="500" alt="Online Shopping Image">
+    <script>
+        function calculateDiscount() 
+        {
+            let customername = document.getElementById("customername").value;
+            let carttot = Number(document.getElementById("carttot").value);
+
+            document.getElementById("p1").innerHTML = "Welcome to Tharini Tech Online Shopping Store, " + customername + "!";
+            document.getElementById("p2").innerHTML = "Your total shopping cart amount is: ₹" + carttot;
+
+            let discountPercent = 0;
+            if (carttot >= 100) 
+            {
+                discountPercent = 20;
+            } else if (carttot >= 50) 
+            {
+                discountPercent = 10;
+            } else 
+            {
+                discountPercent = 0;
+            }
+
+            let discountAmount = (carttot * discountPercent) / 100;
+            let finalAmount = carttot - discountAmount;
+
+            document.getElementById("p3").innerHTML = "Your discount percentage is: " + discountPercent + "%";
+            document.getElementById("p4").innerHTML = "Your discount amount is: ₹" + discountAmount;
+            document.getElementById("p5").innerHTML = "Final amount after discount is: ₹" + finalAmount + "<br>Thank you for shopping with us, " + customername + "!";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document Script Example</title>
+    </head>
+    <body>
+        <h1>Document Script Example</h1>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+        <p id="p5"></p>
+        <p id="p6"></p>
+        <p id="p7"></p>
+        <p id="p8"></p>
+<input type="number" id="age" placeholder="Enter your age">
+<button onclick="checkEligibility()">Check Eligibility</button>
+
+        <script>
+            //addition example
+            let n1,n2,n3,n4; 
+            n1=10;
+            n2=20;
+            n3=30;
+            n4=n1+ n2+ n3;
+            document.getElementById("p1").innerHTML="The sum is:  " + n4 + "  calculated by script";
+            alert("The sum is: " + n4 + "  calculated by script");
+            // Multiplication example
+            let a=5;
+            let b=10;
+            let c=a*b;
+            document.getElementById("p2").innerHTML="the product is:  " + c + "  calculated by script";
+            alert("the product is: " + c + "  calculated by script");
+            //user input example
+            let name=prompt("enter yout name");
+            document.getElementById("p3").innerHTML=" Thanks i know my  "+ name+ "  is a nice name";
+            //constant example
+            const pi=3.14;
+            const name1="Tharini";
+            const person={name:'Tharini', age:18,city:"chennai"}
+            const color=["red", "blue", "green", "yellow"];
+            document.getElementById("p4").innerHTML=
+            "The value of pi is: " + pi + "<br>"+
+           "My name is: " + name1 + "<br>" +
+            "first color is : " + color[0] + "<br>"+
+            "second color is : " + color[1] + "<br>"+
+            "third color is : " + color[2] + "<br>"+
+            "fourth color is : " + color[3] + "<br>"+
+            "Name: " + person.name + " age: " + person.age + " city: " + person.city + "<br>";
+            //operator example
+            let x=10;
+            let y=5;
+            //assignment
+            let assign =x;
+            //relational
+            //equal=isEqual not eual isNotEqual isGreater isLess
+            let isEqual = (x == y);
+            let isNotEqual = (x != y);
+            let isGreater = (x > y);
+            let isLess =(x<y);
+            //logical
+            //and or not= logicalAnd logicalOr logicalNot
+            let logicalAnd=(x>y && x<y);
+            let logicalOr=(x>y || x<y);
+            let logicalNot=!(x>y);
+            //ternary
+            //condition ? valueIfTrue : valueIfFalse
+            let ternary = (x > y) ? "x is greater than y" : "x is not greater than y";
+            document.getElementById("p5").innerHTML=
+            "Assigment op"+ assign + "<br>" +
+            "Relational op"+ isEqual + "<br>" + 
+            "Relational op"+ isNotEqual + "<br>" +
+            "Relational op"+ isGreater + "<br>" +
+            "Relational op"+ isLess + "<br>" +
+            "Logical op"+ logicalAnd + "<br>" +
+            "Logical op"+ logicalOr + "<br>" +
+            "Logical op"+ logicalNot + "<br>" +
+            "Ternary op"+ ternary + "<br>";
+            //if else example
+function checkEligibility() {
+    let age = Number(document.getElementById("age").value);
+    if (age >= 18) {
+        document.getElementById("p6").innerHTML = "You are eligible to vote";
+    } else {
+        document.getElementById("p6").innerHTML = "You are not eligible to vote";
+    }
+}
+            
+
+
+        </script>
+    </body>
+</html>

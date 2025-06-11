@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>THARINI TRAVEL PAGE</title>
+        <style>
+            body {
+                background-color: rgb(3, 255, 3);
+            }
+            h1 {
+                text-align: center;
+                color: navy;
+            }
+            p {
+                font-size: 18px;
+                text-align: center;
+            }
+            #destination-img {
+                display: block;
+                margin: 20px auto;
+                border-radius: 10px;
+                max-width: 400px;
+            }
+            button {
+                display: block;
+                margin: 20px auto;
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: navy;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to Tharini Travel Page</h1>
+        <p>Unlike the usual dream destinations filled with beaches or mountains, my heart is drawn to a place where silence speaks louder than words – a cremation ground. My travel destination is not just about sightseeing; it's about soul-seeing. I want to visit a place where life and death meet, where traditions burn brighter than the flames themselves. A place like Varanasi, where the eternal fire at Manikarnika Ghat has never stopped burning, reminds us of how temporary yet meaningful life is. I don't seek joy in luxuries, but in understanding the truth of existence. In the thick smoke and chants of mantras, I want to feel the weight of time, the peace after pain, and the beauty of letting go. It's not a sad journey – it's a powerful one. A travel to the very edge of life... and maybe beyond..</p>
+        <button onclick="showDestination()">Show Destination</button>
+        <p id="desc"></p>
+        <img id="destination-img" style="display:none;">
+        <script>
+            function showDestination() {
+                document.getElementById("desc").innerText = "While others are out there collecting souvenirs, I’m just out here collecting existential crises near a burning ghat – hot deals and hotter flames, baby! 🔥💀😂";
+                let img = document.getElementById("destination-img");
+                img.src = "https://www.geturns.com/cdn/shop/articles/cremation_process_1732x.jpg?v=1639479250";
+                img.alt = "CREMATION PROCESS";
+                img.style.display = "block";
+            }
+        </script>
+    </body>
+</html>

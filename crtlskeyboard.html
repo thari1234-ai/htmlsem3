@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keyboard keyup and keydown events</title>
+</head>
+<style>
+#div1{
+width:50px;
+height:50px;
+background-color:yellow;
+position: absolute;
+
+top:100px;
+left:100px;
+
+}
+</style>
+<body >
+  <div id="div1">
+  </div>
+  <script>
+  const divElement=document.getElementById('div1');
+  let topPosition=100;
+  let leftPosition=100;
+  document.addEventListener('keydown',function(event)
+  {
+  if (event.key==='ArrowUp')topPosition-=10;
+  else if(event.key==='ArrowDown')topPosition+=10;
+   else if (event.key==='ArrowLeft')leftPosition-=10;
+   else  if (event.key==='ArrowRight')leftPosition+=10;
+   divElement.style.top=topPosition+'px';
+   divElement.style.left=leftPosition+'px';
+  
+  }
+  );
+  </script>
+</body>
+</html>

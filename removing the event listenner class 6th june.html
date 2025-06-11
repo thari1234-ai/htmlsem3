@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>event remove listenner using mouse move</title>
+</head>
+
+<body style="background-color:yellow;">
+  <h1 style="text-align:center">Remove event listener</h1>
+  <div id="div1">
+  <button onclick="removeevent()" id="b1">remove</button>
+  </div>
+  <p id="p1">move mouse here</p>
+
+  <style>
+    #div1, #div2
+	{
+      border: 1px solid black;
+      width: 200px;
+      height: 200px;
+      padding: 20px;
+      margin: 20px auto;
+    }
+    #div1 { background-color: aqua; }
+    #div2 { background-color: orange; }
+
+    
+  </style>
+
+ <script>
+ var eve=document.getElementById("div1")
+ eve.addEventListener("mousemove",mouseFun);
+ function mouseFun()
+ {
+ document.getElementById("p1").innerHTML="event removed";
+ eve.style.background="purple";
+ 
+ }
+ function removeevent()
+ {
+ document.getElementById("div1").removeEventListener("mousemove",mouseFun)
+  alert("🎯 Event removed, boss!");
+ }
+</script>
+</body>
+</html>

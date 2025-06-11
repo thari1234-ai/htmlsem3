@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Interactive Box Game</title>
+<style>
+#divId{
+background-color:aqua;
+width:300px;
+height:300px;
+padding:30px;
+border:5px dotted yellow;
+margin: 20px auto;
+text-align:center;
+font-size:20px;
+font-weight:italic;
+
+}
+</style>
+</head>
+<body style="background-color:coral">
+<h1 style="text-align:center">Interactive Box Game</h1>
+<p style="text-align:center">Click inside the box !!</p>
+<div id="divId" onmouseover="m_over(this)" onmouseout="m_out(this)">
+
+</div>
+<script>
+function m_over(mo)
+{
+mo.innerHTML="Mouse OVER";
+}
+function m_out(mo)
+{
+mo.innerHTML="Mouse out try again";
+}
+const divElement = document.getElementById("divId");
+document.addEventListener("keydown", (event) => {
+const key = event.key.toLowerCase();
+
+      if (key === "r") {
+        divElement.style.background = "red";
+        divElement.textContent = "Pressed red ";
+      } else if (key === "g") {
+        divElement.style.background = "green";
+        divElement.textContent = "Pressed Green ";
+      }
+	    else if (key === "b") {
+        divElement.style.background = "blue";
+        divElement.textContent = "Pressed blue ";
+      }
+    });
+</script>
+</html>

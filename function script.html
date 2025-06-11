@@ -1,0 +1,183 @@
+<html>
+    <head>
+        <title>Functions</title>
+    </head>
+    <body>
+        <h1 style="text-align:center">Functions</h1>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+        <p id="p5"></p>
+        <p id="p6"></p>
+        <p id="p7"></p>
+        <p id="p8"></p>
+        <p id="p9"></p>
+        <p id="p10"></p>
+        <p id="p11"></p>
+        <p id="p12"></p>
+        <p id="p13"></p>
+        <p id="p14"></p>
+        <p id="p15"></p>
+        <p id="p16"></p>
+        <p id="p17"></p>
+        <p id="p18"></p>
+        <p id="p19"></p>
+        <p id="p20"></p>
+        <p id="p21"></p>
+        <p id="p22"></p>
+        <p id="p23"></p>
+        <p id="p24"></p>
+
+    </body>
+    <script>
+        // Function
+        document.getElementById("p1").innerHTML = "<h2>Function</h2>" + greet("thari");
+        function greet(name) {
+            return "Hello " + name;
+        }
+
+        // Function expression
+        document.getElementById("p2").innerHTML = "<h2>Function Expression</h2>";
+        const getDetails = function(student) {
+            return "Name: " + student.name + ", Age: " + student.age;
+        };
+        const student = { name: "thari", age: 20 };
+        document.getElementById("p2").innerHTML += getDetails(student);
+
+        // Return
+        document.getElementById("p3").innerHTML = "<h2>Return</h2>";
+        const getsum = function(a, b) {
+            return a + b;
+        }
+        const sum = getsum(8, 10);
+        document.getElementById("p3").innerHTML += "Sum is: " + sum;
+
+        // Arrow function
+        document.getElementById("p4").innerHTML = "<h2>Arrow Function</h2>";
+        const getsquare = num => num * num;
+        const square = getsquare(5);
+        document.getElementById("p4").innerHTML += "Square is: " + square;
+
+        // Arrays
+        document.getElementById("p5").innerHTML = "<h2>Arrays</h2>";
+        const fruits = ["apple", "banana", "cherry"];
+        document.getElementById("p5").innerHTML += "Fruits: " + fruits.join(", ");
+
+        // new keyword using()
+        document.getElementById("p6").innerHTML = "<h2>Array using new keyword</h2>";
+        const numbers = new Array(1, 2, 3, 4, 5);
+        document.getElementById("p6").innerHTML += "Numbers: " + numbers.join(", ");
+
+        // access array elements
+        document.getElementById("p7").innerHTML = "<h2>Access Array Elements</h2>";
+        let result = fruits[0];
+        document.getElementById("p7").innerHTML += "First fruit: " + result;
+
+        // change an element
+        document.getElementById("p8").innerHTML = "<h2>Change an Element</h2>";
+        fruits[1] = "orange";
+        document.getElementById("p8").innerHTML += "Updated Fruits: " + fruits.join(", ");
+
+        // array to string 
+        document.getElementById("p9").innerHTML = "<h2>Array to String</h2>";
+        const scooters = ["Vespa", "Honda", "Yamaha"];
+        document.getElementById("p9").innerHTML += "Scooters: " + scooters + "<br>String scooter: " + scooters.toString();
+
+        // array length
+        document.getElementById("p10").innerHTML = "<h2>Array Length</h2>";
+        document.getElementById("p10").innerHTML += "Length of scooters: " + scooters.length;
+
+        // array methods push means adds an element to the end
+        document.getElementById("p11").innerHTML = "<h2>Array Methods</h2>";
+        scooters.push("Suzuki"); // push adds an element to the end
+        document.getElementById("p11").innerHTML += "After push: " + scooters;
+
+        // sort
+        document.getElementById("p12").innerHTML = "<h2>Sort Array</h2>";
+        scooters.sort();
+        document.getElementById("p12").innerHTML += "After sort: " + scooters;
+
+        // display as list
+        document.getElementById("p13").innerHTML = "<h2>Scooter List</h2>";
+        let length = scooters.length;
+        let scooterlist = "<ul>";
+        for (let i = 0; i < length; i++) {
+            scooterlist += "<li>" + scooters[i] + "</li>";
+        }
+        scooterlist += "</ul>";
+        document.getElementById("p13").innerHTML += scooterlist;
+        //pop
+        document.getElementById("p14").innerHTML="<h2>Pop</h2>";
+document.getElementById("p14").innerHTML += "before pop: " + scooters;        
+let popped= scooters.pop(); // removes the last element
+document.getElementById("p14").innerHTML += "<br>After pop: " + scooters + "<br>Popped element: " + popped;
+     //
+    // array(3);//0d array
+     //array(1,2,3);//1d array
+     //array([1,2,3],[4,5,6]);//2d array
+     const scooters2 = [[1,2,3],[4,5,6]];
+     const scooters3 = scooters2.flat();
+     document.getElementById("p15").innerHTML="<h1>2D Array and 1d array</h1>";
+     document.getElementById("p15").innerHTML += "<br>1D Array: " + scooters2[0]; // Accessing element in 1D array
+     document.getElementById("p15").innerHTML += "<br>1D Array: " + scooters2[0][0]; // Accessing element in 1D array
+     document.getElementById("p15").innerHTML += "<br>2D Array: " + scooters2[0][1]; // Accessing element in 2D array
+    document.getElementById("p16").innerHTML += "<br>flattend: " + scooters3.length; // Accessing element in 2D array
+    document.getElementById("p16").innerHTML += "<br>flattend: " + scooters3; // Accessing element in 2D array
+// splice
+const fruits2 = ["apple", "banana", "cherry", "orange"];
+document.getElementById("p17").innerHTML = "<h2>Splice</h2>";
+document.getElementById("p17").innerHTML += "Before splice: " + fruits2 + "<br>";
+const newfruits = fruits2.splice(2, 1, "kiwi"); // removes 1 element at index 2 and adds "kiwi"
+document.getElementById("p17").innerHTML += "After splice: " + fruits2 + "<br>Removed: " + newfruits;
+
+// slice
+const fruits3 = ["apple", "banana", "cherry", "orange"];
+const sliced = fruits3.slice(1, 3); // gets elements at index 1 and 2
+document.getElementById("p18").innerHTML = "<h2>Slice</h2>";
+document.getElementById("p18").innerHTML += "Original array: " + fruits3 + "<br>Sliced: " + sliced;  
+//shift means removes the first element
+const fruits4 = ["apple", "banana", "cherry", "orange"];
+document.getElementById("p19").innerHTML = "<h2>Shift</h2>";
+afterShift = fruits4.shift(); // removes the first element
+document.getElementById("p19").innerHTML+="after shift removed : "+afterShift + "<br>Fruits after shift: " + fruits4;  
+//indexof
+document.getElementById("p20").innerHTML = "<h2>IndexOf</h2>";
+const index = fruits4.indexOf("banana"); // gets the index of "banana"
+document.getElementById("p20").innerHTML += "Index of banana: " + index + "<br>Fruits: " + fruits4;
+//unshift means adds an element to the beginning
+const flowers=["rose","lily","tulip"];
+document.getElementById("p21").innerHTML="<h2>Unshift</h2>";
+flowers.unshift("daisy"); // adds "daisy" to the beginning
+document.getElementById("p21").innerHTML += "Flowers after unshift: " + flowers;
+//concat means combines two arrays
+const vegetables = ["carrot", "broccoli"];
+document.getElementById("p22").innerHTML = "<h2>Concat</h2>";
+const combined = flowers.concat(vegetables); // combines flowers and vegetables
+document.getElementById("p22").innerHTML += "Combined array: " + combined;
+//objects means name value pair in a {} called as object literal is a list of name-value pairs inside {}
+const student1=
+{
+    "name":"tharini",
+    "age":18
+}
+document.getElementById("p23").innerHTML = "<h2>Objects</h2>";
+document.getElementById("p23").innerHTML += "Name: " + student1.name + ", Age: " + student1.age;
+//another way to create a object
+const student2 = new Object();
+student2.name = "soniya";
+student2.age = 18;
+document.getElementById("p24").innerHTML = "<h2>Object using new keyword</h2>";
+document.getElementById("p24").innerHTML += "Name: " + student2.name + ", Age: " + student2.age;
+//another way to create a object
+const student3 = { name: "sowmya", age: 18 };
+document.getElementById("p25").innerHTML = "<h2>Object using object literal</h2>";
+    </script>
+
+
+</script>
+
+
+
+
+</html>

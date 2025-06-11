@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Accessing the element in java script</title>
+    </head>
+    <body>
+        <h1 style="text-align: center;">Accessing the element in java script</h1>
+        <p id="p1">From thr paragraph-Find the html elements by id</p>
+       <div class="divClass">HTML DIVISION</div>
+       <strong class="strongClass">html strong</strong>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+    </body>
+    <script>
+        //1st way to access the element by id using for each
+       //const value = document.querySelectorAll("div, p,strong");	
+       // value.forEach(v1 => {
+       // console.log(v1.textContent);
+       //});
+       //2nd way to access the element by id without for each 
+        //const value=document.getElementsByTagName("p")[0];
+        //const divValue=document.getElementsByTagName("div")[0];
+        //const strongValue=document.getElementsByTagName("strong")[0];
+        //const pTxt = value.textContent;
+        //const divTxt = divValue.textContent;
+        //const strongTxt = strongValue.textContent;
+        //console.log("paragraph text: " + pTxt);
+        //console.log("div text: " + divTxt);
+        //console.log("strong text: " + strongTxt);
+
+        //3rd way using className()
+        const elements = document.querySelectorAll(".divClass, .strongClass");
+        elements.forEach(v1 => {
+        console.log(v1.textContent);
+        });
+        //4th way using getElementsByClassName()
+        //const elements = document.getElementsByClassName("divClass");
+        //const elements1 = document.getElementsByClassName("strongClass");
+        //const pTxt = elements[0].textContent;
+        //const strongTxt = elements1[0].textContent;
+        //console.log("div text: " + pTxt);
+        //console.log("strong text: " + strongTxt);
+        
+
+
+
+
+
+</script>
+</html>

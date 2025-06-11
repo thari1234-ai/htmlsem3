@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>access control system</title>
+<style>
+body{
+background-color:pink;
+}
+h1, h2{
+text-align:center;
+}
+.test-btn {
+    font-size: 1.5em;
+    padding: 15px 40px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background 0.3s;
+	text-align:center;
+}
+.test-btn:hover {
+    background-color: #e75480;
+}
+#para{
+text-align:centre;
+color:red;
+ font-size: 1.5em;
+ text-align: center;
+ font-family: Arial, sans-serif;
+ background-color: #f0e6ff;
+ padding: 10px;
+ border-radius: 8px;
+}
+
+</style>
+</head>
+<body>
+<h1>Tharini constructions</h1>
+<h2>Access control system</h2>
+
+<label for="name">Enter your name:</label>
+<input type="text" id="name">
+<br><br>
+<label for="id">Enter your ID:</label>
+<input type="text" id="id">
+<br><br>
+<label for="field">Enter your field:</label>
+<input type="text" id="field">
+<br><br>
+<hr>
+<label><input type="radio" id="Validid"> Pls click this if u have valid id:</label><br>
+<label><input type="checkbox" id="fullTime" > Full timed </label><br>
+<label><input type="checkbox" id="splaccess" > spl access</label><br>
+<label><input type="checkbox" id="suspended" > Suspended</label><br>
+<button onclick="checkAccess()">Click to check</button>
+<p id="accessresult"></p>
+<p id="para">The Test Cases are available below please check it out!!</p>
+<button class="test-btn" onclick="testcases()">Test cases</button>
+<p id="testcasesresult"></p>
+<script>
+function checkAccess()
+{
+    let name = document.getElementById("name").value;
+    let id = document.getElementById("id").value;
+    let field = document.getElementById("field").value;
+
+    let hasValidid = document.getElementById("Validid").checked;
+    let isfulltime = document.getElementById("fullTime").checked;
+    let hassplaccess = document.getElementById("splaccess").checked;
+    let issuspended = document.getElementById("suspended").checked;
+
+    let accessgranted = hasValidid && ((isfulltime || hassplaccess) && !issuspended);
+    let result = "THE EMPLOYEE NAME IS: " + name + "<br>" +
+                 "ID IS: " + id + "<br>" +
+                 "FIELD: " + field + "<br>";
+    result += accessgranted ? "<b>Access Granted</b>" : "<b>Access Denied</b>";
+    document.getElementById("accessresult").innerHTML = result;
+}
+
+function testcases() {
+    // Array of test cases
+    const testCases = [
+        { name: "thari", id: "e24ai049", field: "cs", hasValidid: true, isfulltime: false, hassplaccess: true, issuspended: false },
+        { name: "arun", id: "e24ai050", field: "mech", hasValidid: false, isfulltime: true, hassplaccess: false, issuspended: false },
+        { name: "sara", id: "e24ai051", field: "ece", hasValidid: true, isfulltime: false, hassplaccess: false, issuspended: true },
+        { name: "ram", id: "e24ai052", field: "civil", hasValidid: true, isfulltime: true, hassplaccess: false, issuspended: false },
+        { name: "lisa", id: "e24ai053", field: "it", hasValidid: true, isfulltime: false, hassplaccess: false, issuspended: false }
+    ];
+
+    let output = "<b>Test Cases Results:</b><br>";
+    testCases.forEach((tc, idx) => {
+        let accessgranted = tc.hasValidid && ((tc.isfulltime || tc.hassplaccess) && !tc.issuspended);
+        output += "Test Case " + (idx + 1) + ":<br>" +
+            "THE EMPLOYEE NAME IS: " + tc.name + "<br>" +
+            "ID IS: " + tc.id + "<br>" +
+            "FIELD: " + tc.field + "<br>" +
+            (accessgranted ? "<b>Access Granted</b>" : "<b>Access Denied</b>") + "<br><br>";
+    });
+    document.getElementById("testcasesresult").innerHTML = output;
+}
+</script>
+</body>
+</html>

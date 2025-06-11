@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Event addEventListener()</title>
+</head>
+
+<body style="background-color:yellow;">
+  <h1 style="text-align:center">Event Listener</h1>
+  <p style="text-align:center">
+    <strong>addEventListener()</strong> attaches an event handler to the specified element.  
+    One element can have multiple events.  
+    Syntax: <code>addEventListener(event, function,usercapture)</code>
+  </p>
+<style>
+#divid{
+background-color:aqua;
+border:1px solid black;
+width:100px;
+height:100px;
+}
+</style>
+  <div id="divid">
+  </div>
+  <!--<button id="b1">Click me!!!!</button> for giving alert add event listener!-->
+
+  <script>
+    //var btn = document.getElementById("b1");
+	var divvar=document.getElementById("divid");
+	divvar.addEventListener("mouseover",fun1);
+	divvar.addEventListener("mouseout",fun2);
+	divvar.addEventListener("click",fun3);
+	function fun1(){
+	divvar.style.background="blue"
+	}
+	function fun2(){
+	divvar.style.background="pink"
+	}
+	function fun3(){
+	divvar.style.background="green"
+	}
+    //btn.addEventListener("click", buttonFun);
+    //btn.addEventListener("click", buttonFunn);
+
+    //function buttonFun() {
+     // alert("💥 Event 1 listener triggered!");
+    //} //alert for 2 addEventListener()
+
+    //function buttonFunn(){
+     // alert("💥 Event 2 listener triggered!");
+   // }
+  </script>
+</body>
+</html>

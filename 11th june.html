@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS FORMS </title>
+</head>
+<body style="background-color:coral">
+<H1 style="text-align:center">SUBMIT SCRIPT FORM</H1>
+<!--form validation using script - if forms fireld is empty a fn used to alert a message and prevents from it!-->
+<h3 style="text-align:center">Form Validation</h3>
+<form name="f1" action="/submit" onsubmit="return validateForm()" method="post">
+<strong>Name:</strong> <input type="text" name="fname"><br><br>
+<strong>Phone number:</strong><input type="tel" name="phno">
+      <input type="submit" value="Submit">
+</form>
+</body>
+ <script>
+    function validateForm() {
+      let val = document.forms["f1"]["fname"].value; // gets name
+      let phone = document.forms["f1"]["phno"].value; // gets phone
+
+      if (val === "") {
+        alert("NAME CANT BE EMPTY!!!");
+        return false;
+      }
+
+      if (phone === "") {
+        alert("PHONE NO CANT BE EMPTY!!!");
+        return false;
+      }
+
+      // 👇 this part was missing!
+      return true;
+    }
+  </script>
+  </html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>event remove listenner using mouse move and keyboard event</title>
+</head>
+
+<body style="background-color:yellow;">
+  <h1 style="text-align:center">Remove event listener and jeyboard event </h1>
+  <h1>keyboard</h1>
+  <div id="div1">
+  <button onclick="removeevent()" id="b1">remove</button>
+  </div>
+  <div id="div2">press a</div>
+  <p id="p1">move mouse here</p>
+
+  <style>
+    #div1, #div2
+	{
+      border: 1px solid black;
+      width: 200px;
+      height: 200px;
+      padding: 20px;
+      margin: 20px auto;
+    }
+    #div1 { background-color: aqua; }
+    #div2 { background-color: orange; }
+
+    
+  </style>
+
+  <script>
+    var eve = document.getElementById("div1");
+
+    eve.addEventListener("mousemove", mouseFun);
+
+    function mouseFun() {
+      document.getElementById("p1").innerHTML = "Mouse moved";
+      eve.style.background = "purple";
+    }
+
+    function removeevent() {
+      eve.removeEventListener("mousemove", mouseFun);
+      alert("🎯 Event removed, boss!");
+    }
+
+    const divElement = document.getElementById("div2");
+
+    // 🟢 KEYDOWN: when key is pressed
+    document.addEventListener("keydown", (event) => {
+      const key = event.key.toLowerCase();
+
+      if (key === "a") {
+        divElement.style.background = "coral";
+        divElement.textContent = "Pressed A 💥";
+      } else if (key === "g") {
+        divElement.style.background = "green";
+        divElement.textContent = "Pressed G 💚";
+      }
+    });
+
+    // 🔴 KEYUP: when key is released
+    document.addEventListener("keyup", (event) => {
+      const key = event.key.toLowerCase();
+
+      if (key === "a" || key === "g") {
+        divElement.textContent = `You released '${key}' 🛑`;
+        divElement.style.border = "4px dashed black";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Script practise qns</title>
+        
+    </head>
+    <body>
+        <h1>SCRIPT PRACTISE QNS </h1>
+		<input type="number" id="m1" placeholder="enter the number"></input>
+	<button onclick="checknumber()">check number</button>
+	<p id="result"></p>
+	<input type="number" id="m" placeholder="enter a num for multiplication table"></input>
+	<button onclick="multiply()">Multiply </button>
+	<p id="tableresult"></p>
+	<input type="number" id="n1" placeholder="enter your first mark"></input>
+	<input type="number" id="n2" placeholder="enter your second mark"></input>
+	<input type="number" id="n3" placeholder="enter your third mark"></input>
+	<input type="number" id="n4" placeholder="enter your fourth mark"></input>
+	<input type="number" id="n5" placeholder="enter your fifth mark"></input>
+	<button onclick="checkMarks()">Check your marks</button>
+	<p id="marks">The mark is:</p>
+    </body>
+	
+    <script>
+        //positive negative zero
+        function checknumber()
+		{
+		let m1=document.getElementById("m1").value;
+		let result=" "
+		
+		if (m1>0){
+		result="The number is positive";
+		}
+		else if (m1<0){
+		result="NEGATIVE"
+		}
+		else{
+		result="The number is 0"
+		}
+		document.getElementById("result").innerHTML=result;
+		}
+		function checkMarks()
+		{
+		let n1=Number(document.getElementById("n1").value);
+		let n2=Number(document.getElementById("n2").value);
+		let n3=Number(document.getElementById("n3").value);
+		let n4=Number(document.getElementById("n4").value);
+		let n5=Number(document.getElementById("n5").value);
+		
+		let total=n1+n2+n3+n4+n5
+		let result="total" + total;
+		document.getElementById("marks").innerHTML=result
+		}
+		function multiply()
+		{
+		let m=Number(document.getElementById("m").value);
+		let result=""
+		for (let i=1;i<=10;i++){
+		result+=m+"x"+i+"="+(m*i)+"<br>";
+		}
+		document.getElementById("tableresult").innerHTML=result}
+		
+		
+		
+		
+		
+    </script>
+</html>

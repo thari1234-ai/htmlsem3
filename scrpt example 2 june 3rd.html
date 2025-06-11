@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SCRIPT EXAMPLE</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script>
+        function dun_ON() {
+            document.getElementById('light_on').style.display = 'block';
+            document.getElementById('light_off').style.display = 'none';}
+        function dun_OFF() {
+            document.getElementById('light_off').style.display = 'block';
+            document.getElementById('light_on').style.display='none';
+        }
+    </script>
+</head>
+<body>
+    <h1>SCRIPT EXAMPLE</h1>
+    <h1>LIGHT ON AND OFF</h1>
+    <button onclick="dun_ON()" class="btn btn-success">CLICK TO ON LIGHT</button>
+    <button onclick="dun_OFF()" class="btn btn-danger">CLICK TO OFF LIGHT</button>
+    <br><br>
+    <img src="https://as2.ftcdn.net/v2/jpg/00/77/99/99/1000_F_77999958_tZYT7xWlSJewLgsMYY3CrAWvYITlWYTF.jpg" alt="Light Bulb off" id="light_off" style="width: 100px; height: 100px;">
+    <img src="https://cdn1.vectorstock.com/i/1000x1000/05/10/3d-realistic-turning-on-light-bulb-icon-vector-28050510.jpg" alt="Light Bulb on" id="light_on" style="width: 100px; height: 100px; display:none;">
+    <br><br>
+</body>
+</html>

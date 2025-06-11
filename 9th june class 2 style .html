@@ -1,0 +1,37 @@
+<html><!--alignitems propery align content-->
+    <head>
+        <title>Changing html content and style</title>
+    </head>
+    <style>
+        #divid{
+            width:150px;
+            height: 320px;
+            border: 3px solid rgb(238, 27, 27);
+            align-items: flex-start;
+            display: flex;
+            flex-flow:row wrap;
+
+        }
+    </style>
+    <body style="background-color: lightblue;">
+        <p id="p1">changing html style</p>
+        <div id="divid">
+            <div style="background-color: yellow;;">division1</div>
+               <div style="background-color: rgb(9, 255, 0);">division2</div>
+                <div style="background-color: rgb(154, 36, 233);">division3</div>
+                <div style="background-color: rgb(255, 0, 0);">division4</div>
+        </div>
+        <button type="button" onclick="align()">Click me to change text</button>
+       
+    </body>
+    <script>
+        function align()
+        {
+            //document.getElementById("divid").style.alignContent="flex-end";
+            document.getElementById("divid").style.alignItems="center";
+            
+
+
+        }
+    </script>
+</html>

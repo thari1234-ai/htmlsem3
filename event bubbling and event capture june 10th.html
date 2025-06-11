@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>bubble and capturing</title>
+</head>
+
+<body style="background-color:yellow;">
+  <h1 style="text-align:center">Event bubble and capturing</h1>
+
+  <div id="div1">
+    <strong>Bubble</strong>
+    <p id="p1"><strong>Event bubbling</strong></p>
+  </div>
+
+  <div id="div2">
+    <strong>Capture</strong>
+    <p id="p2"><strong>Event Capturing</strong></p>
+  </div>
+
+  <style>
+    #div1, #div2 {
+      border: 1px solid black;
+      width: 200px;
+      height: 200px;
+      padding: 20px;
+      margin: 20px auto;
+    }
+    #div1 { background-color: aqua; }
+    #div2 { background-color: orange; }
+
+    #p1, #p2 {
+      background-color: red;
+      font-size: 25px;
+      border: 2px solid;
+      padding: 15px;
+      color: white;
+    }
+  </style>
+
+  <script>
+    // BUBBLING (default: false)
+    document.getElementById("p1").addEventListener("click", function() {
+      alert("Paragraph 1 clicked");
+    }, false);
+
+    document.getElementById("div1").addEventListener("click", function() {
+      alert("First div is clicked");
+    }, false);
+
+    // CAPTURING (true)
+    document.getElementById("p2").addEventListener("click", function() {
+      alert("Paragraph 2 clicked");
+    }, true); // bubbling still, so p2 fires first
+
+    document.getElementById("div2").addEventListener("click", function() {
+      alert("Div 2 clicked");
+    }, true); // capturing, so div2 fires first
+  </script>
+
+</body>
+</html>

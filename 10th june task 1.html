@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Toggle Button Click Event Listener</title>
+</head>
+<body>
+<h1 style="text-align:center">Toggle Button Click Event Listener</h1>
+<div id="div1">
+<button onclick="startbutton()" id="b1"><strong>start button<strong></button>
+</div>
+<div id="div2">
+<button onclick="stopbutton()" id="b2"><strong>stop button<strong></button>
+</div>
+</body>
+<style>
+#div1, #div2 {
+      border: 1px solid black;
+      width: 200px;
+      height: 200px;
+      padding: 20px;
+      margin: 20px auto;
+    }
+    #div1 { background-color: aqua; }
+    #div2 { background-color: orange; }
+</style>
+<script>  
+let colors = ["red", "blue", "green", "purple", "yellow", "pink", "orange", "gold", "cyan", "lime"];
+let div=document.getElementById("div1");
+
+function startbutton()
+{
+div.addEventListener("click",fun_1);
+}
+function fun_1()
+{
+let randomIndex = Math.floor(Math.random() * colors.length);
+let randomColor = colors[randomIndex];
+div.style.background = randomColor;
+}
+function stopbutton()
+{
+div.removeEventListener("click",fun_1);
+alert("click event listener is removed ")
+}
+</script>
+</html>

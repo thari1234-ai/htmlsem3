@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More than 50 rs products </title>
+</head>
+<body>
+<style>
+body{
+background-color:pink;
+}
+h1{
+text-align:center;
+}
+</style>
+
+    <h1>All Our Products</h1>
+    <p>Here is a complete list of all the products in our inventory, regardless of price:</p>
+    <ul id="all-products-list">
+        </ul>
+
+    <hr>
+
+    <h1>Products Costing More Than Rs. 50</h1>
+    <p>And now, the exclusive list of products that cost more than Rs. 50:</p>
+    <ul id="expensive-products-list">
+        </ul>
+
+    <p>Total products costing more than Rs. 50: <span id="expensive-product-count-display"></span></p>
+
+    <script>
+        const products = [
+            { name: "Unicorn Tears (Limited Edition)", price: 120 },
+            { name: "Slightly Used Sock Puppet", price: 25 },
+            { name: "Invisibility Cloak (DIY kit)", price: 75 },
+            { name: "Enchanted Rubber Ducky", price: 60 },
+            { name: "Pocket Lint (Vintage 1998)", price: 2 },
+            { name: "Dragon's Breath Hot Sauce (Mild)", price: 90 },
+            { name: "Manual for Time Travel (Missing Pages)", price: 40 },
+            { name: "Canned Sunshine", price: 55 }
+        ];
+
+        
+        const allProductsListElement = document.getElementById('all-products-list');
+        for (let i = 0; i < products.length; i++) {
+            const product = products[i];
+            const listItem = document.createElement('li');
+            listItem.textContent = `${product.name} (Rs.${product.price})`;
+            allProductsListElement.appendChild(listItem);
+        }
+
+        
+        let expensiveProductCount = 0;
+        const expensiveProductsListElement = document.getElementById('expensive-products-list');
+        const expensiveProductCountDisplayElement = document.getElementById('expensive-product-count-display');
+
+        for (let i = 0; i < products.length; i++) {
+            const product = products[i];
+
+            if (product.price > 50) {
+                expensiveProductCount++;
+
+                const listItem = document.createElement('li');
+                listItem.textContent = `${product.name} (Rs.${product.price})`;
+                expensiveProductsListElement.appendChild(listItem);
+            }
+        }
+
+        expensiveProductCountDisplayElement.textContent = expensiveProductCount;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> DOM Event date (mouse) </title>
+</head>
+
+<body style="background-color:yellow;">
+<h1 style="text-align:center">MOUSE OVER AND MOUSE OUT</h1>
+<p style="text-align:center">mouse click or mouse over loading an image loading a webpage changing input field submitting a form or pressing a key on a keyboard</p>
+<style>
+#divId{
+background-color:aqua;
+width:150px;
+height:100px;
+padding:30px
+border:1px solid green;
+}
+</style>
+<div id="divId" onmouseover="m_over(this)" onmouseout="m_out(this)">
+
+</div>
+<script>
+function m_over(mo)
+{
+mo.innerHTML="Mouse OVER";
+}
+function m_out(mo)
+{
+mo.innerHTML="Mouse out try again";
+}
+</script>
+</html>

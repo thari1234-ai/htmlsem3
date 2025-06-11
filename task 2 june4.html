@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Tharini Data Pack Services</title>
+</head>
+<body>
+<h1>Tharini Data Pack Services</h1>
+<label for="name">Enter your name:</label>
+<input type="text" id="name">
+<br><br>
+<label for="id">Enter your phone number:</label>
+<input type="text" id="id">
+<br><br>
+<label for="field">Enter your Airtel/jio/idea:</label>
+<input type="text" id="field">
+<br><br>
+<h2>Choose Your Data Plan</h2>
+<label for="planCode">Enter Plan Code (A, B, C, D):</label>
+        <input type="text" id="planCode" maxlength="1" style="text-transform:uppercase;">
+        <br>
+        <button class="test-btn" onclick="showPlan()">Show Plan Details</button>
+        <div id="planResult"></div>
+<style>
+body{
+background-color:pink;
+}
+h1, h2{
+text-align:center;
+}
+.test-btn {
+    font-size: 1.5em;
+    padding: 15px 40px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background 0.3s;
+	text-align:center;
+}
+.test-btn:hover {
+    background-color: #e75480;
+}
+#para{
+text-align:centre;
+color:red;
+ font-size: 1.5em;
+ text-align: center;
+ font-family: Arial, sans-serif;
+ background-color: #f0e6ff;
+ padding: 10px;
+ border-radius: 8px;
+}
+</style>
+</body>
+<script>
+ function showPlan() {
+            let code = document.getElementById("planCode").value.toUpperCase();
+            let result = "";
+            switch(code) {
+                case "A":
+                    result = "<b>Basic Plan</b><br>Price: $10<br>Data Limit: 1 GB/month";
+                    break;
+                case "B":
+                    result = "<b>Standard Plan</b><br>Price: $20<br>Data Limit: 5 GB/month";
+                    break;
+                case "C":
+                    result = "<b>Premium Plan</b><br>Price: $30<br>Data Limit: 15 GB/month";
+                    break;
+                case "D":
+                    result = "<b>Unlimited Plan</b><br>Price: $50<br>Data Limit: Unlimited";
+                    break;
+                default:
+                    result = "<span style='color:red;'>Invalid plan code. Please enter A, B, C, or D.</span>";
+            }
+            document.getElementById("planResult").innerHTML = result;
+        }
+
+</script>
+</html>
