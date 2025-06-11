@@ -37,7 +37,7 @@
       }
 
       divElement.textContent = reaction;
-    });fg
+    });
   </script>
 </body>
 </html>
